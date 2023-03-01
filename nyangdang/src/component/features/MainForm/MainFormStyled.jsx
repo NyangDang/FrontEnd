@@ -11,34 +11,25 @@ const StAddContentBtn = styled.button`
   border-color: beige;
 `;
 
-const StBtnWrap = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 100px;
-`;
-
 const StContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  position: absolute;
+  position: relative;
   width: 100%;
   height: auto;
-  overflow: scroll;
-  overflow: auto;
+  /* overflow: scroll; */
 `;
 
 const StContentWrap = styled.div`
   position: relative;
-  margin-top: 10px;
-  width: 1500px;
+  margin: auto;
+  width: 80%;
 
   /* height: 100%; */
-  padding: 0px;
-  /* border: 1px solid purple; */
+  padding: 50px;
+  border: 1px solid purple;
   display: flex;
   /* align-items: center; */
   justify-content: center;
@@ -56,29 +47,27 @@ const StOutsideImgBoxWrap = styled.div`
 const StImageBoxWrap = styled.div`
   position: relative;
   margin: 30px;
-  width: -5%;
+  width: 100%;
   height: 100%;
 
-  /* border: 1px solid red; */
+  border: 1px solid red;
   display: flex;
   flex-direction: row;
   align-items: center;
   overflow: hidden;
   flex-wrap: wrap;
-  column-gap: 40px;
-  row-gap: 10px;
+  gap: 70px;
+
   /* 좌우 붙이기(갭으로) */
   /* gap으로 조절하는게 더정확함 */
-  /* justify-content: space-between; == 
-  자동으로 넓이 계산해서 좌우로 컨텐츠 붙이기*/
+  justify-content: space-between;
 `;
 
 const Stimg = styled.img`
-  width: 245px;
-  height: 245px;
+  width: 340px;
+  height: 340px;
   object-fit: cover;
-  border: 5px solid black;
-  border-radius: 30px;
+  border: 1px solid green;
 `;
 
 export {
@@ -88,5 +77,4 @@ export {
   StOutsideImgBoxWrap,
   Stimg,
   StContainer,
-  StBtnWrap,
 };

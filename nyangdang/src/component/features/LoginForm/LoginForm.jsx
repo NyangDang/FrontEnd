@@ -44,7 +44,9 @@ function LoginForm() {
       const token = response.headers.authorization;
       setCookies('username', response.headers.authorization);  // setCookie(쿠키이름, 쿠키에 넣을 값, 옵션)
       const decodedUserInfo = jwt_decode(token) // 토큰 decode
-      localStorage.setItem('userInfo', JSON.stringify(decodedUserInfo))
+      localStorage.setItem('username', JSON.stringify(decodedUserInfo))
+      alert("로그인 완료");
+      navigate('/');
     }).catch(error => {
       console.log(error)
     });
@@ -72,8 +74,14 @@ function LoginForm() {
   };
 
   // const jwtToken = await Login(loginPayload)
-  const kakaoBtnClickHandler = () => {
+  const kakaoBtnClickHandler = async () => {
     window.open(url);
+    const response = await axios.get("https://kauth.kakao.com/oauth/token",{
+      withCredentials: true,
+      headers: {Authorization: "0136855d6d3a62366452598b4f210c36*"}
+    });
+    console.log("kakao response :", response);
+    setCookies('username', response.headers.authorization);
   };
 
   const keyDownHandler = (e) => {
