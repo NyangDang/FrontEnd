@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 const StContainer = styled.div`
   padding: 100px;
   background: #f5f6f7;
@@ -25,7 +24,6 @@ const StContainerForm = styled.form`
   top: 200px;
   gap: 32px;
 `;
-
 const StLabel = styled.label``;
 const StInput = styled.input`
   display: block;
@@ -87,7 +85,6 @@ const StBtnBox = styled.div`
   display: flex;
   gap: 12px;
 `;
-
 export {
   StContainerForm,
   StBtnBox,

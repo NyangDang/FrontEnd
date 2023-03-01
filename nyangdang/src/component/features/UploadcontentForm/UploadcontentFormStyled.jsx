@@ -1,24 +1,21 @@
 import styled from "styled-components";
-
 const StContainer = styled.div`
-  width:100%;
-  height:100vh;
-  display:flex;
-  justify-content:center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
 `;
-
 const StContentWrap = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width:600px;
-  height:100%;
+  width: 600px;
+  height: 100%;
   h3 {
-    font-size:32px;
+    font-size: 32px;
   }
 `;
-
 const StImagebox = styled.div`
   display: flex;
   /* justify-content: center; */
@@ -26,11 +23,10 @@ const StImagebox = styled.div`
   height: 100px;
   width: 100%;
   position: relative;
-
 `;
 const StLabel = styled.label`
-  width:10%;
-  font-size:22px;
+  width: 10%;
+  font-size: 22px;
 `;
 const StImgLabel = styled.label`
   display: inline-block;
@@ -45,7 +41,7 @@ const StImgLabel = styled.label`
 const StImgInput = styled.input`
   position: absolute;
   z-index: 0;
-  left:20px;
+  left: 20px;
   /*width: 0;
   height: 0;
   padding: 0;
@@ -62,13 +58,13 @@ const StImgInputAdd = styled.input`
   color: #999999;
 `;
 const StTitleBox = styled.div`
-  display:flex;
-  width:100%;
-  justify-content:center;
-  align-items:center;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 `;
 const StInput = styled.input`
-  width:90%;
+  width: 90%;
   display: block;
   height: 51px;
   border: solid 1px #dadada;
@@ -76,27 +72,37 @@ const StInput = styled.input`
   box-sizing: border-box;
   background: #fff;
 `;
-
 const StInputContent = styled.textarea`
-  width:100%;
-  height:300px;
-  padding:10px;
+  width: 100%;
+  height: 300px;
+  padding: 10px;
   box-sizing: border-box;
 `;
 const StButton = styled.button`
   background-color: black;
   color: white;
-  border:none;
-  padding:16px 10px;
+  border: none;
+  padding: 16px 10px;
   cursor: pointer;
-  margin-top:12px;
-  width:50%;
+  margin-top: 12px;
+  width: 50%;
 `;
 const StBtnBox = styled.div`
-  display:flex;
-  gap:12px;
-  width:100%;
+  display: flex;
+  gap: 12px;
+  width: 100%;
 `;
-
-
-export { StContentWrap, StImgInputAdd, StImgLabel, StContainer, StImagebox, StImgInput, StInput, StButton, StLabel, StInputContent, StBtnBox, StTitleBox };
+export {
+  StContentWrap,
+  StImgInputAdd,
+  StImgLabel,
+  StContainer,
+  StImagebox,
+  StImgInput,
+  StInput,
+  StButton,
+  StLabel,
+  StInputContent,
+  StBtnBox,
+  StTitleBox,
+};
