@@ -1,5 +1,6 @@
 //axios 요청 들어가는 모든 모듈
 import axios from "axios";
+import { getCookie } from "../until/cookies";
 
 //조회
 const getblogs = async () => {
@@ -9,7 +10,6 @@ const getblogs = async () => {
   return response.data;
 };
 
-//댓글전송
 const postblogs = async (newComment) => {
   await axios.post(
     `${process.env.REACT_APP_URL}/api/blogs/${newComment.id}/comment/`,
@@ -17,9 +17,11 @@ const postblogs = async (newComment) => {
   );
 };
 
-//게시글삭제
-const delblogs = async (delContent) => {
-  await axios.delete(`${process.env.REACT_APP_URL}/api/blogs/${delContent}`);
-};
+const instance = axios.create({
+  baseURL: process.env.REACT_APP_URL,
+  headers: {
+    Authorization: `${getCookie('username')}}`,
+  }
+});
 
-export { getblogs, postblogs, delblogs };
+export { getblogs, postblogs, instance };

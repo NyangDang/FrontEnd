@@ -5,7 +5,6 @@ import {
   StOutsideImgBoxWrap,
   Stimg,
   StContainer,
-  StBtnWrap,
 } from "./MainFormStyled";
 import Header from "../../ui/Header/Header";
 import React, { useEffect } from "react";
@@ -20,47 +19,38 @@ function MainForm() {
   console.log(data);
 
   return (
-    <div>
+    <StContainer>
       <Header />
-      <StContainer>
-        <StBtnWrap>
-          <Link to={`/uploadcontent/`}>
-            <StAddContentBtn>댕냥 자랑하기</StAddContentBtn>
-            {/* <img
-              src="https://item.kakaocdn.net/do/e3fb5ac2357015ff769d9dfd01b017b9f43ad912ad8dd55b04db6a64cddaf76d"
-              alt="dog"
-            /> */}
-          </Link>
-          {/* 사진1,2번째줄 */}
-        </StBtnWrap>
-        <StContentWrap>
-          <StOutsideImgBoxWrap>
-            <StImageBoxWrap>
-              {data.map((v) => (
+      <StAddContentBtn>댕냥 자랑하기</StAddContentBtn>
+      <StContentWrap>
+        <Link to={`/uploadcontent/`}></Link>
+        {/* 사진1,2번째줄 */}
+        <StOutsideImgBoxWrap>
+          <StImageBoxWrap>
+            {data.map((v) => (
+              <div key={v.id}>
+                <Link to={`/detail/${v.id}`}>
+                  {/* 사진 */}
+                  <Stimg src={v.imageUrl} />
+                </Link>
+              </div>
+            ))}
+          </StImageBoxWrap>
+          <StImageBoxWrap>
+            {data
+              .filter((v) => v.imageUrl === true)
+              .map((v) => (
                 <div key={v.id}>
                   <Link to={`/detail/${v.id}`}>
                     {/* 사진 */}
-                    <Stimg src={v.imageUrl} />
+                    {/* <img src={v.imageUrl} />   */}
                   </Link>
                 </div>
               ))}
-            </StImageBoxWrap>
-            <StImageBoxWrap>
-              {data
-                .filter((v) => v.imageUrl === true)
-                .map((v) => (
-                  <div key={v.id}>
-                    <Link to={`/detail/${v.id}`}>
-                      {/* 사진 */}
-                      {/* <img src={v.imageUrl} />   */}
-                    </Link>
-                  </div>
-                ))}
-            </StImageBoxWrap>
-          </StOutsideImgBoxWrap>
-        </StContentWrap>
-      </StContainer>
-    </div>
+          </StImageBoxWrap>
+        </StOutsideImgBoxWrap>
+      </StContentWrap>
+    </StContainer>
   );
 }
 

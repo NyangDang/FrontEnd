@@ -64,6 +64,24 @@ const StButtonCheck = styled.button`
     background-color: black;
     color:white;
     cursor: pointer;
+    h3 {
+        position: absolute;
+        right: -24px;
+        top:-40px;
+        font-size: 12px;
+        color:green;
+        z-index: 3;
+        width: 150px;
+    }
+    h2 {
+        position: absolute;
+        right: -20px;
+        top:-40px;
+        font-size: 12px;
+        color:tomato;
+        z-index: 3;
+        width: 150px;
+    }
 `;
 const StButton = styled.button`
     background-color: black;

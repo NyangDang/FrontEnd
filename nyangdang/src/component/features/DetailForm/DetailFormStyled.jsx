@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const StContentWrap = styled.div`
-  margin-top: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,8 +15,8 @@ const StBoxWrap = styled.div`
 `;
 const StBoxWrap2 = styled.div`
   display: flex;
-  justify-content: left;
-  align-items: left;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
 `;
 
@@ -26,14 +25,10 @@ const StimageBox = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 500px;
-  height: 500px;
+  width: 150px;
+  height: 150px;
   border: 1px solid black;
-`;
-const Stimg = styled.img`
-  width: 500px;
-  height: 500px;
-  object-fit: cover;
+  padding: 30px;
 `;
 
 const StButtonWrap = styled.div`
@@ -47,53 +42,33 @@ const StContentBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 500px;
-  height: 300px;
+  width: 150px;
+  height: 80px;
   border: 1px solid black;
+  padding: 10px;
 `;
-
 const StCommentBox = styled.div`
   display: flex;
-  justify-content: left;
-  align-items: flex-start;
-  width: 500px;
-  height: 150px;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 60px;
   border: 1px solid black;
-  flex-direction: column;
-  overflow: scroll;
-  overflow: auto;
+  padding: 10px;
 `;
 const StAddCommentBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
 `;
-
-const StAddCommentBtn = styled.button`
-  width: 100px;
-  height: 50px;
-`;
-const StCommentData = styled.div`
+const StInputBox = styled.input`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
-  color: red;
-  max-width: 500px;
-  max-height: 50px;
-  padding-left: 20px;
-`;
-
-const StInputBoxWrap = styled.div`
-  display: flex;
   border: 1px solid black;
-  width: 500px;
-  height: 50px;
+  width: 150px;
+  height: 10px;
 `;
-const StInputBox = styled.input`
-  width: 500px;
-`;
-
 export {
   StContentWrap,
   StBoxWrap,
@@ -104,10 +79,6 @@ export {
   StCommentBox,
   StAddCommentBox,
   StInputBox,
-  Stimg,
-  StInputBoxWrap,
-  StAddCommentBtn,
-  StCommentData,
 };
 
 // const StContainer = styled.div`
