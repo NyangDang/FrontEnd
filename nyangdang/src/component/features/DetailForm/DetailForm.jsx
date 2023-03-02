@@ -1,5 +1,11 @@
 import React, { useState, useRef } from "react";
-import { delblogs, getblogs, postblogs } from "../../../axios/api";
+import {
+  delblogs,
+  getblogs,
+  postblogs,
+  getcomments,
+  instance,
+} from "../../../axios/api";
 import { useQuery, useMutation, useQueryClient } from "react-query";
 
 import {
@@ -20,20 +26,19 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import Header from "../../ui/Header/Header";
 
 function DetailForm() {
+  const { isLoding, isError, data } = useQuery("blogs", getblogs); //인자: 이름, 가져올데이터명
   const params = useParams();
   const [comment, setComment] = useState("");
   const navigate = useNavigate();
-  const mutation = useMutation();
-
-  const { isLoding, isError, data } = useQuery("blogs", getblogs); //인자: 이름, 가져올데이터명
+  // const mutation = useMutation();
   if (isLoding) return <h3>Loding...</h3>;
   if (isError) return <h3>Error occur</h3>;
 
-  const findTodo = data.find((value) => value.id === Number(params.id));
+  const findId = data?.find((value) => value.id === Number(params.id));
 
   const AddCommentBtn = () => {
     const newComment = {
-      blogno: findTodo.id,
+      blogno: findId.id,
       comment,
     };
     postblogs(newComment);
@@ -47,8 +52,7 @@ function DetailForm() {
   };
 
   console.log("dataaaaa", data);
-  console.log(comment);
-  console.log("findtodo", findTodo);
+  // console.log("findtodo", findId.comments);
 
   return (
     <div>
@@ -60,22 +64,25 @@ function DetailForm() {
         Detail
       </div>
       <StContentWrap>
-        <StBoxWrap key={findTodo.id}>
+        <StBoxWrap key={findId.id}>
           <div>
             {/* 사진 */}
             <StimageBox>
-              <Stimg src={findTodo.imageUrl} alt="img" />
+              <Stimg src={findId?.imageUrl} alt="img" />
             </StimageBox>
           </div>
           <StBoxWrap2>
             {/* 내용 */}
-            <StContentBox>{findTodo.contents}</StContentBox>
-            {/* map으로 findTodo값 전체출력 */}
+            <StContentBox>{findId?.contents}</StContentBox>
 
             <StCommentBox>
-              {data.map((v) => (
-                <StCommentData key={v.id}>{v.contents}</StCommentData>
-              ))}
+              {/* map으로 findTodo값 전체출력 */}
+
+              <StCommentData key={findId.id}>
+                {/* <div>{findId.comments.map((item) => item.username)}</div> */}
+
+                <div>{findId.comments.map((item) => item.comment)}</div>
+              </StCommentData>
             </StCommentBox>
 
             <StInputBoxWrap>
@@ -96,7 +103,7 @@ function DetailForm() {
           <Link to={`/Fixcontent`}>
             <button>수정</button>
           </Link>
-          <button onClick={() => deleteContentBtnHandler(findTodo.id)}>
+          <button onClick={() => deleteContentBtnHandler(findId.id)}>
             삭제
           </button>
         </StButtonWrap>
