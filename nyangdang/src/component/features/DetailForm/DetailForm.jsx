@@ -65,6 +65,7 @@ function DetailForm() {
       </div>
       <StContentWrap>
         <StBoxWrap key={findId.id}>
+          {/*  */}
           <div>
             {/* 사진 */}
             <StimageBox>
