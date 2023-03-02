@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 const StContentWrap = styled.div`
   margin-top: 100px;
   display: flex;
@@ -7,7 +6,6 @@ const StContentWrap = styled.div`
   align-items: center;
   flex-direction: column;
 `;
-
 const StBoxWrap = styled.div`
   display: flex;
   justify-content: center;
@@ -20,7 +18,6 @@ const StBoxWrap2 = styled.div`
   align-items: left;
   flex-direction: column;
 `;
-
 const StimageBox = styled.div`
   display: flex;
   justify-content: center;
@@ -35,14 +32,29 @@ const Stimg = styled.img`
   height: 500px;
   object-fit: cover;
 `;
-
 const StButtonWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
 `;
-
+const StRemoveBtn = styled.button`
+  margin-top: 24px;
+  right: 10px;
+  top: 18px;
+  background-color: #9f4c4c;
+  color: white;
+  border-radius: 20px;
+  width: 120px;
+  height: 40px;
+  font-size: 15px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  border-color: beige;
+  cursor: pointer;
+  &:hover {
+    transform: rotate(6deg);
+  }
+`;
 const StContentBox = styled.div`
   display: flex;
   justify-content: center;
@@ -51,7 +63,6 @@ const StContentBox = styled.div`
   height: 300px;
   border: 1px solid black;
 `;
-
 const StCommentBox = styled.div`
   display: flex;
   justify-content: left;
@@ -62,13 +73,14 @@ const StCommentBox = styled.div`
   flex-direction: column;
   overflow: scroll;
   overflow: auto;
+  box-sizing: border-box;
+  padding-top: 32px;
 `;
 const StAddCommentBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
 `;
-
 const StAddCommentBtn = styled.button`
   width: 100px;
   height: 50px;
@@ -77,13 +89,11 @@ const StCommentData = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
-  color: red;
+  flex-direction: column;
   max-width: 500px;
   max-height: 50px;
   padding-left: 20px;
 `;
-
 const StInputBoxWrap = styled.div`
   display: flex;
   border: 1px solid black;
@@ -93,7 +103,10 @@ const StInputBoxWrap = styled.div`
 const StInputBox = styled.input`
   width: 500px;
 `;
-
+const StComment = styled.div`
+  padding-top: 24px;
+  margin-top: 24px;
+`;
 export {
   StContentWrap,
   StBoxWrap,
@@ -108,71 +121,6 @@ export {
   StInputBoxWrap,
   StAddCommentBtn,
   StCommentData,
+  StRemoveBtn,
+  StComment,
 };
-
-// const StContainer = styled.div`
-//   width:100%;
-//   height:100vh;
-//   display: flex;
-//   justify-content: center;
-//   align-items:center;
-//   gap:12px;
-// `;
-
-// const StImg = styled.div`
-//   background-color: gray;
-//   width:40%;
-//   height:60%;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// `;
-
-// const StBoxRight = styled.div`
-//   width:40%;
-//   height: 60%;
-//   display: flex;
-//   flex-direction: column;
-//   gap:12px;
-// `;
-
-// const StContent = styled.div`
-//   background-color: antiquewhite;
-//   width:90%;
-//   height:40%;
-// `;
-// const StComment = styled.form`
-//   background-color: skyblue;
-//   width:90%;
-//   height:50%;
-// `;
-// const StWriteBox = styled.div`
-//   width:90%;
-//   height:10%;
-//   display: flex;
-//   align-items: center;
-// `;
-// const StLabel = styled.label`
-//   width:15%;
-// `;
-// const StInput = styled.input`
-//   display: block;
-//   width:85%;
-//   height: 36px;
-//   border: solid 1px #dadada;
-//   padding: 10px 14px;
-//   box-sizing: border-box;
-//   background: #fff;
-//   position: relative;
-// `;
-
-// export {
-//   StContainer,
-//   StImg,
-//   StBoxRight,
-//   StContent,
-//   StComment,
-//   StWriteBox,
-//   StInput,
-//   StLabel,
-// };

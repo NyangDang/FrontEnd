@@ -89,7 +89,7 @@ function SignupForm() {
       .then((res) => {
         setCookies("username", res.data.authorization);
         alert(res.data.msg);
-        navigate("/login");
+        navigate("/");
         return res;
       })
       .catch((error) => {

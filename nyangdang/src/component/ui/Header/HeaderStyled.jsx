@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 const StContainer = styled.div`
   background-color: #fffefb;
   align-items: center;
@@ -20,7 +19,24 @@ const StContainer = styled.div`
     font-size: 28px;
     font-weight: 600;
     cursor: pointer;
+    color: #3a1c1c;
   }
 `;
-
-export { StContainer };
+const StBtn = styled.button`
+  position: absolute;
+  right: 10px;
+  top: 18px;
+  background-color: #9f4c4c;
+  color: white;
+  border-radius: 20px;
+  width: 120px;
+  height: 40px;
+  font-size: 15px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  border-color: beige;
+  cursor: pointer;
+  &:hover {
+    transform: rotate(6deg);
+  }
+`;
+export { StContainer, StBtn };

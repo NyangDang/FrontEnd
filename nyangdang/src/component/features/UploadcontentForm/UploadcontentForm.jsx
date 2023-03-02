@@ -62,11 +62,11 @@ function UploadcontentForm() {
     // console.log(formData.get('image'));
     // console.log(formData.get('requestDto'));
     mutation.mutate(formData);
-    navigate("/");
+    navigate("/main");
   };
   const onClickCancelHandler = (e) => {
     e.preventDefault();
-    navigate("/");
+    navigate("/main");
   };
   return (
     <>
